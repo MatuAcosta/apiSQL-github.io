@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const db = require('./config/db')
-const creacionRoles = require('./creacionUsersRoles/creacionRoles')
+const creacionRoles = require('./creacionUsersRoles/creacionRoles');
+app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: false }))
 require('dotenv').config()
 app.use(bodyParser.json())
